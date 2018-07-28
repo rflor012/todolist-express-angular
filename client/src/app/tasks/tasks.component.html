@@ -1,0 +1,17 @@
+
+<form (submit)="addNew()">
+  <h2>Lets see if we can add some here now:</h2>
+
+  <label>Title:</label>
+  <input [(ngModel)]="theNewEntry.title" name="theTitle" type="text" />
+
+  <label>Description:</label>
+  <textarea [(ngModel)]="theNewEntry.description" name="theDescription" type="text"></textarea>
+  <button>Submit</button>
+</form>
+
+<div *ngFor="let aTask of tasks">
+  <h2>{{aTask.title}}</h2>
+  <p> {{aTask.description}}</p>
+  <a [routerLink]="['tasks', aTask._id]">See Details</a>
+</div>
